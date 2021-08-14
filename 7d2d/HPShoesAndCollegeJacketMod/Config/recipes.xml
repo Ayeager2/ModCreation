@@ -1,0 +1,20 @@
+<chibimods>
+<append xpath="/recipes">
+
+<recipe name="highPerformanceRunningShoesMod" count="1" craft_area="workstationTailor"  craft_tool="resourceSewingKit"  tags="learnable">
+	<ingredient name="resourceSewingKit" count="1"/>
+	<ingredient name="resourceGlue" count="10"/>
+    <ingredient name="resourceScrapPolymers" count="10"/>
+	<ingredient name="modDyeGreen" count="1"/>   
+	<ingredient name="apparelRunningShoesHP" count="1"/>   	
+</recipe>
+
+<recipe name="collegeJacketArmorMod" count="1" craft_area="workstationTailor"  craft_tool="resourceSewingKit">
+	<ingredient name="resourceSewingKit" count="1"/>
+	<ingredient name="resourceGlue" count="20"/>
+    <ingredient name="resourceScrapPolymers" count="10"/>
+	<ingredient name="apparelCoatJacketLetterZU" count="1"/>	
+</recipe>
+
+</append>
+</chibimods>
