@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xml>
 	<ModInfo>
-		<Name value="Chibiluvs tweeks" />
-		<Description value="Adding tweeks and new equiptable mods to the game" />
+		<Name value="Chibiluvs multitool" />
+		<Description value="Adding a multitool to the game" />
 		<Author value="Chibiluv" />
-		<Version value="A19_1.6" />
+		<Version value="A19_1.9" />
 	</ModInfo>
 </xml>

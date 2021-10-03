@@ -1,0 +1,69 @@
+<chibiluvmods>
+	<append xpath="/item_modifiers">
+            <item_modifier name="axePickShovelMod" installable_tags="axe,shovel,knife,tool,motorTool"  modifier_tags="rare" type="attachment">
+            <property name="UnlockedBy" value=""/>
+            <property name="CustomIcon" value="modMeleeFiremansAxeMod"/>
+            <property name="CustomIconTint" value="86,255,109"/>
+            <property name="Tags" value="knife,melee,medium,tool,shovel,motorTool,perkDeepCuts,perkMotherLode"/>
+            <property name="DisplayType" value="melee"/>
+            <property name="HoldType" value="17"/>
+            <property name="Meshfile" value="Items/Weapons/Melee/Axe/fireaxePrefab"/>
+            <property name="Material" value="Mmetal"/>
+            <property name="RepairTools" value="resourceForgedIron"/>
+            <property name="DegradationBreaksAfter" value="false"/>
+            <property name="SoundJammed" value="ItemNeedsRepair"/>
+            <property name="SoundDestroy" value="wooddestroy1"/>
+            <property class="Action0">
+                <property name="Class" value="DynamicMelee"/>
+                <property name="Sphere" value="0.15"/>
+                <property name="Sound_start" value="swoosh"/>
+                <property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+                <property name="ToolCategory.Butcher" value="0" param1="4"/>
+                <property name="Sound_harvesting" value="open_animal" param1="organic"/>
+            </property>
+            <property class="Action1">
+                <property name="Class" value="DynamicMelee"/>
+                <property name="Sphere" value="0.15"/>
+                <property name="Sound_start" value="swoosh"/>
+                <property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+                <property name="ToolCategory.Butcher" value="0" param1="4"/>
+                <property name="Sound_harvesting" value="open_animal" param1="organic"/>
+                <property name="UsePowerAttackAnimation" value="true"/>
+            </property>
+            <effect_group name="Base Effects">
+                <passive_effect name="MaxRange" operation="base_set" value="5"/>
+                <passive_effect name="BlockRange" operation="base_set" value="5"/>
+                <passive_effect name="EntityDamage" operation="base_set" value="26"/> 
+                <passive_effect name="BlockDamage" operation="base_set" value="60"/>
+                <passive_effect name="HarvestCount" operation="base_set" value=".35" tags="butcherHarvest"/>
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="55"/> 
+                <passive_effect name="DamageModifier" operation="perc_add" value="1" tags="wood"/>
+                <passive_effect name="DamageModifier" operation="perc_add" value="1" tags="earth"/>
+                <passive_effect name="DamageModifier" operation="perc_add" value="1" tags="stone"/>
+                <passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+                <passive_effect name="StaminaLoss" operation="base_set" value="15" tags="primary"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="200,800" tier="1,6"/>
+            </effect_group>
+            <effect_group name="Power Attack">
+                <passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+                <passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+                <passive_effect name="AttacksPerMinute" operation="perc_add" value=".3" tags="secondary"/>
+                <passive_effect name="StaminaLoss" operation="base_add" value="30" tags="secondary"/>
+                <triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player1painlg">
+                    <requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="70"/>
+                    <requirement name="IsMale" target="self"/>
+                </triggered_effect>
+                <triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player2painlg">
+                    <requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="70"/>
+                    <requirement name="IsMale" target="self" invert="true"/>
+                </triggered_effect>
+            </effect_group>
+                <property name="Group" value="Tools/Traps"/>
+                <property name="ActionSkillGroup" value="Mining Tools"/>
+                <property name="CraftingSkillGroup" value="craftSkillTools"/>
+                <property name="PickupJournalEntry" value="miningTip"/>
+                <property name="RepairExpMultiplier" value="5.5"/>
+            </effect_group>
+            </item_modifier>
+    	</append>
+</chibiluvmods>
