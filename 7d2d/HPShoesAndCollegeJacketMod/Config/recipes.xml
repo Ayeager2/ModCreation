@@ -9,7 +9,7 @@
 	<ingredient name="apparelRunningShoesHP" count="1"/>   	
 </recipe>
 
-<recipe name="collegeJacketArmorMod" count="1" craft_area="workstationTailor"  craft_tool="resourceSewingKit">
+<recipe name="collegeJacketArmorMod" count="1" craft_area="workstationTailor"  craft_tool="resourceSewingKit" tags="learnable">
 	<ingredient name="resourceSewingKit" count="1"/>
 	<ingredient name="resourceGlue" count="20"/>
     <ingredient name="resourceScrapPolymers" count="10"/>
