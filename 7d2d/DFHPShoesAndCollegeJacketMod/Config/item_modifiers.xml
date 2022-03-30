@@ -1,0 +1,68 @@
+<chibiluvmods>
+	<append xpath="/item_modifiers">
+    <item_modifier name="collegeJacketArmorMod" installable_tags="armorChest"  modifier_tags="rare" type="attachment">
+		<property name="UnlockedBy" value="perkCraftScience"/>
+		<property name="CustomIcon" value="apparelCoatJacketLetterZU"/>
+		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="EconomicValue" value="5000"/>
+		<property name="DisplayType" value="clothingJacketLetter"/>
+
+        <effect_group tiered="false">
+            <requirement name="ItemHasTags" tags="armorChest"/>
+                <triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffCollegeJacket"/>
+                <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffCollegeJacket"/>
+        </effect_group>
+
+		<item_property_overrides name="*">
+				<property name="Mesh" value="letter_jacket"/>
+				<property name="Overlay0" value="letter_jacket"/>
+				<property name="Overlay0Tint" value="100,100,100,255"/>
+				<property name="Overlay1" value="letter_jacket_arms"/>
+				<property name="Overlay1Tint" value="243,241,238,255"/>
+				<property name="Overlay2" value="letterjacket_tshirt_overlay"/>
+				<property name="Overlay2Tint" value="250,245,250,255"/>
+				<property name="Overlay3" value="letterjacket_letter_overlay"/>
+				<property name="Layer" value="3"/>
+				<property name="Mask0" value="chest" param1="base"/>
+		</item_property_overrides>
+
+		<effect_group tiered="false">
+        <passive_effect name="ModSlots" operation="base_set" value="1"/>
+        <passive_effect name="HypothermalResist" operation="base_add" value="11.7,15.5"/>
+        <passive_effect name="HyperthermalResist" operation="base_add" value="1.5,2.5"/>
+        <passive_effect name="RunSpeed" operation="perc_add" value=".05"/><display_value name="dRunSpeed" value=".05"/>
+	</effect_group>
+	</item_modifier>
+
+
+    <item_modifier name="highPerformanceRunningShoesMod" installable_tags="armorFeet" modifier_tags="rare" type="attachment">
+		<property name="UnlockedBy" value="perkCraftScience"/>
+		<property name="CustomIcon" value="apparelRunningShoesRegular"/>
+		<property name="CustomIconTint" value="86,255,109"/>
+		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="EconomicValue" value="5000"/>
+		<property name="DisplayType" value="clothingRunningShoes"/>
+
+        <effect_group tiered="false">
+            <requirement name="ItemHasTags" tags="armorFeet"/>
+                <triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffHighPerformanceRunningShoes"/>
+                <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffHighPerformanceRunningShoes"/>
+        </effect_group>
+
+		<item_property_overrides name="*">
+				<property name="Mesh" value="running_shoes"/>
+				<property name="Overlay0" value="running_shoes"/>
+				<property name="Overlay0Tint" value="86,255,109"/>
+		</item_property_overrides>
+
+		<effect_group tiered="false">
+        <passive_effect name="HypothermalResist" operation="base_add" value="1.8,4.2"/>
+        <passive_effect name="HyperthermalResist" operation="base_add" value="1.5,2.5"/>
+        <passive_effect name="StaminaChangeOT" operation="perc_add" value=".2" tags="running"/><display_value name="dStaminaRegen" value=".2"/>
+        <passive_effect name="RunSpeed" operation="perc_add" value=".05"/><display_value name="dRunSpeed" value=".05"/>
+		</effect_group>
+	</item_modifier>
+	</append>
+</chibiluvmods>
